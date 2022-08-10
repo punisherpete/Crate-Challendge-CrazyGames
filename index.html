@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CrateChallenge| Crazy Games</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<body>
+  <script type="text/javascript">
+    var slugify = (text) => {
+      return (text || '')
+        .replace(/&/g, ' and ')
+        .replace(/[^a-zA-Z0-9]/g, ' ')
+        .trim()
+        .replace(/\s+/g, '-')
+        .toLowerCase();
+    }
+    var options = {
+      author: "Unity Developer",
+      gameName: "CrateChallenge",
+      gameSlug: slugify("CrateChallenge"),
+      gameLink: "https://www.crazygames.com/game/your-game-here",
+      allowFullscreen: true,
+      locale: "en_US",
+      loader: "unity2020",
+      loaderOptions: {
+        unityLoaderUrl: "Build/Build.loader.js",
+        unityConfigOptions: {
+          "dataUrl": "Build/df761cb9935fd7d9c2d3275898c40e43.data.br",
+          "frameworkUrl": "Build/335a85890d4b08d3a807c52f94b51445.js.br",
+          "codeUrl": "Build/63a3330778e320011d8e8741cf3b4549.wasm.br",
+          "streamingAssetsUrl": "StreamingAssets",
+        }
+      },
+      category: "UnitySDK",
+      categoryLink: "https://www.crazygames.com",
+      thumbnail: "https://images.crazygames.com/upcoming.png",
+      gameStatus: "published",
+      dollarRate: 1,
+      sdkDebug: true,
+      gameLink: 'https://www.crazygames.com/testgame',
+      forceTestAds: true,
+    };
+
+    window.CrazyGames = {};
+    window.CrazyGames.options = options;
+  </script>
+  <iframe id="unity" allow="autoplay; fullscreen" style="width: 922px; height: 532px;"></iframe>
+  <script type="text/javascript">
+    var iframe = document.getElementById('unity');
+    iframe.setAttribute('src', 'template.html' + window.location.search);
+  </script>
+</body>
